@@ -1,0 +1,83 @@
+mysql> alter table w.student add primary key(reg_no);
+Query OK, 0 rows affected (0.07 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc w.faculty;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| fac_no       | int         | YES  |     | NULL    |       |
+| fac_name     | varchar(15) | YES  |     | NULL    |       |
+| gender       | varchar(1)  | YES  |     | NULL    |       |
+| dob          | date        | YES  |     | NULL    |       |
+| date_of_join | date        | YES  |     | NULL    |       |
+| mobile_no    | int         | YES  |     | NULL    |       |
+| dept_no      | int         | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+mysql> alter table w.faculty add primary key(fac_no);
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table w.faculty add constraint gender check(gender in ("m","f"));
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc w.student;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| reg_no    | int         | NO   | PRI | NULL    |       |
+| name      | varchar(15) | YES  |     | NULL    |       |
+| gender    | varchar(1)  | YES  |     | NULL    |       |
+| dob       | date        | YES  |     | NULL    |       |
+| mobile_no | int         | NO   |     | NULL    |       |
+| city      | varchar(15) | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> desc w.faculty;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| fac_no       | int         | NO   | PRI | NULL    |       |
+| fac_name     | varchar(15) | YES  |     | NULL    |       |
+| gender       | varchar(1)  | YES  |     | NULL    |       |
+| dob          | date        | YES  |     | NULL    |       |
+| date_of_join | date        | YES  |     | NULL    |       |
+| mobile_no    | int         | YES  |     | NULL    |       |
+| dept_no      | int         | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+mysql> alter table w.depart add primary key(dept_no);
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc w.depart;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| dept_no   | varchar(4)  | NO   | PRI | NULL    |       |
+| dept_name | varchar(15) | YES  |     | NULL    |       |
+| dept_head | varchar(4)  | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+mysql> alter table w.course add primary key(course_no);
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc w.course;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| course_no    | int         | NO   | PRI | NULL    |       |
+| course_descr | varchar(14) | YES  |     | NULL    |       |
+| course_type  | varchar(1)  | YES  |     | NULL    |       |
+| sem_no       | int         | YES  |     | NULL    |       |
+| hall_no      | int         | YES  |     | NULL    |       |
+| fac_no       | int         | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
