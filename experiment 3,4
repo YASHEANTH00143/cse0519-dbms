@@ -1,0 +1,111 @@
+experiment 3,4
+1)
+mysql> SELECT*FROM student;
++-------+---------+--------+------+----------+---------+
+| Regno | Name    | gender | Dob  | mobileno | city    |
++-------+---------+--------+------+----------+---------+
+|     2 | hari    | m      | 2043 | 87648719 | trichy  |
+|     3 | rani    | f      | 2002 | 87348719 | tvly    |
+|     4 | priya   | f      | 2012 | 56348719 | ambur   |
+|     5 | raju    | m      | 2007 | 59048719 | vellore |
+|   324 | nithish | m      | 2003 | 87648719 | chennai |
++-------+---------+--------+------+----------+---------+
+5 rows in set (0.00 sec)
+
+mysql> SELECT*FROM dept;
++--------+----------+----------+
+| deptno | deptname | depthead |
++--------+----------+----------+
+|      1 | AI       | mohan    |
+|      2 | cse      | raj      |
+|      1 | VLSI     | moorthy  |
+|      4 | physics  | raju     |
++--------+----------+----------+
+4 rows in set (0.01 sec)
+
+mysql> SELECT*FROM course;
++----------+------------+------------+-------+--------+-------+
+| courseno | coursedesc | coursetype | semno | hallno | Facno |
++----------+------------+------------+-------+--------+-------+
+|        1 | pgm        | u          |     2 |    500 |   701 |
+|        1 | theory     | p          |     3 |    501 |   702 |
+|        1 | practical  | u          |     1 |    530 |   721 |
+|        2 | p          | e          |     2 |    400 |   601 |
++----------+------------+------------+-------+--------+-------+
+mysql> SELECT*FROM faculty;
++---------+--------+------+----------+------+
+| facname | gender | dob  | mobileno | doj  |
++---------+--------+------+----------+------+
+| mohan   | m      | 2003 | 78906544 | 2020 |
+| moorthy | m      | 2023 |  7890634 | 2010 |
+| priya   | f      | 2003 | 78906334 | 2012 |
++---------+--------+------+----------+------+
+3 rows in set (0.00 sec)
+2)
+mysql> update student set regno=323 where name="hari";
+Query OK, 1 row affected (0.06 sec)
+3)
+mysql> delete from faculty where facname="mohan";
+Query OK, 1 row affected (0.11 sec)
+4)
+mysql> SELECT*FROM faculty;
++---------+--------+------+----------+------+
+| facname | gender | dob  | mobileno | doj  |
++---------+--------+------+----------+------+
+| moorthy | m      | 2023 |  7890634 | 2010 |
+| priya   | f      | 2003 | 78906334 | 2012 |
++---------+--------+------+----------+------+
+2 rows in set (0.00 sec)
+5)
+mysql> delete from faculty where facname="moorthy";
+Query OK, 1 row affected (0.06 sec)
+
+mysql> SELECT*FROM FACULTY;
++---------+--------+------+----------+------+
+| facname | gender | dob  | mobileno | doj  |
++---------+--------+------+----------+------+
+| priya   | f      | 2003 | 78906334 | 2012 |
++---------+--------+------+----------+------+
+1 row in set (0.00 sec)
+6)
+mysql> SELECT*FROM STUDENT;
++-------+---------+--------+------+----------+---------+
+| Regno | Name    | gender | Dob  | mobileno | city    |
++-------+---------+--------+------+----------+---------+
+|     3 | rani    | f      | 2002 | 87348719 | tvly    |
+|     4 | priya   | f      | 2012 | 56348719 | ambur   |
+|     5 | raju    | m      | 2007 | 59048719 | vellore |
+|   323 | hari    | m      | 2043 | 87648719 | trichy  |
+|   324 | nithish | m      | 2003 | 87648719 | chennai |
++-------+---------+--------+------+----------+---------+
+5 rows in set (0.00 sec)
+
+mysql> SELECT*FROM FACULTY;
++---------+--------+------+----------+------+
+| facname | gender | dob  | mobileno | doj  |
++---------+--------+------+----------+------+
+| priya   | f      | 2003 | 78906334 | 2012 |
++---------+--------+------+----------+------+
+1 row in set (0.00 sec)
+
+mysql> SELECT*FROM DEPT;
++--------+----------+----------+
+| deptno | deptname | depthead |
++--------+----------+----------+
+|      1 | AI       | mohan    |
+|      2 | cse      | raj      |
+|      1 | VLSI     | moorthy  |
+|      4 | physics  | raju     |
++--------+----------+----------+
+4 rows in set (0.00 sec)
+
+mysql> SELECT*FROM COURSE;
++----------+------------+------------+-------+--------+-------+
+| courseno | coursedesc | coursetype | semno | hallno | Facno |
++----------+------------+------------+-------+--------+-------+
+|        1 | pgm        | u          |     2 |    500 |   701 |
+|        1 | theory     | p          |     3 |    501 |   702 |
+|        1 | practical  | u          |     1 |    530 |   721 |
+|        2 | p          | e          |     2 |    400 |   601 |
++----------+------------+------------+-------+--------+-------+
+4 rows in set (0.00 sec)
