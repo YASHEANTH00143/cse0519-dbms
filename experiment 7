@@ -1,0 +1,38 @@
+exp7:
+1)
+mysql> select courseno,count(courseno) from course group by courseno;
++----------+-----------------+
+| courseno | count(courseno) |
++----------+-----------------+
+|        1 |               3 |
+|        2 |               1 |
++----------+-----------------+
+2 rows in set (0.03 sec)
+2)
+mysql> select courseno,count(hallno) from course group by courseno;
++----------+---------------+
+| courseno | count(hallno) |
++----------+---------------+
+|        1 |             3 |
+|        2 |             1 |
++----------+---------------+
+2 rows in set (0.00 sec)
+3)
+mysql> select name,dob from student order by regno;
++---------+------+
+| name    | dob  |
++---------+------+
+| rani    | 2002 |
+| priya   | 2012 |
+| raju    | 2007 |
+| hari    | 2043 |
+| nithish | 2003 |
++---------+------+
+4)
+mysql> select*from faculty order by dob;
++---------+--------+------+----------+------+
+| facname | gender | dob  | mobileno | doj  |
++---------+--------+------+----------+------+
+| priya   | f      | 2003 | 78906334 | 2012 |
++---------+--------+------+----------+------+
+1 row in set (0.00 sec)
