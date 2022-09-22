@@ -1,0 +1,17 @@
+mysql> delimiter $$
+mysql> set @email_list="";
+    -> $$
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> call build_email(@email_list);
+    -> $$
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> select @email_list;
+    -> $$
++---------------------------------------------------+
+| @email_list                                       |
++---------------------------------------------------+
+| ramyadevi@gmail.com,ramya@gmail.com,uk@gmail.com, |
++---------------------------------------------------+
+1 row in set (0.00 sec)
