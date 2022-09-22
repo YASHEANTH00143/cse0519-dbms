@@ -1,0 +1,37 @@
+experiment 8:
+1)
+mysql> select*from stud2 where marks>(select avg(marks) from stud2);
++-------+---------+----------+-------+------------+------------+
+| regno | name    | courseno | marks | facultydoj | assesments |
++-------+---------+----------+-------+------------+------------+
+|     1 | nithish |        1 |    70 |       2001 |          6 |
+|     2 | ram     |        2 |    50 |       2002 |          5 |
++-------+---------+----------+-------+------------+------------+
+2 rows in set (0.11 sec)
+2)
+mysql> select name from stud2 where assesments>1;
++---------+
+| name    |
++---------+
+| nithish |
+| ram     |
+| suresh  |
+| ramesh  |
++---------+
+3)
+mysql> select*from faculty order by doj limit 1;
++---------+--------+------+----------+------+
+| facname | gender | dob  | mobileno | doj  |
++---------+--------+------+----------+------+
+| priya   | f      | 2003 | 78906334 | 2012 |
++---------+--------+------+----------+------+
+1 row in set (0.05 sec)
+4)
+mysql> select courseno,marks from stud2 where marks>(select avg(marks) from stud2)order by courseno;
++----------+-------+
+| courseno | marks |
++----------+-------+
+|        1 |    70 |
+|        2 |    50 |
++----------+-------+
+2 rows in set (0.00 sec)
