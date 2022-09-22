@@ -1,0 +1,28 @@
+exp10:
+1)
+mysql> create view stu_view as select regno,name,dob from student;
+Query OK, 0 rows affected (0.09 sec)
+
+mysql> select*from stu_view;
++-------+---------+------+
+| regno | name    | dob  |
++-------+---------+------+
+|     3 | rani    | 2002 |
+|     4 | priya   | 2012 |
+|     5 | raju    | 2007 |
+|   323 | hari    | 2043 |
+|   324 | nithish | 2003 |
++-------+---------+------+
+5 rows in set (0.00 sec)
+mysql> create index regno on student(regno);
+Query OK, 0 rows affected (0.19 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> show index from student;
++---------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+| Table   | Non_unique | Key_name | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment |
++---------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+| student |          0 | PRIMARY  |            1 | Regno       | A         |           2 |     NULL | NULL   |      | BTREE      |         |               |
+| student |          1 | regno    |            1 | Regno       | A         |           5 |     NULL | NULL   |      | BTREE      |         |               |
++---------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+2 rows in set (0.03 sec)
