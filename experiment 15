@@ -1,0 +1,37 @@
+exp 15;
+program 1:
+mysql> call student_info();
++-------+---------+---------+---------+
+| stuid | name    | area    | subject |
++-------+---------+---------+---------+
+|     1 | nith    | chennai | cse     |
+|     2 | mukesh  | chennai | cse     |
+|     2 | sathish | chennai | cse     |
++-------+---------+---------+---------+
+3 rows in set (0.00 sec)
+
+Query OK, 0 rows affected (0.02 sec)
+program 2:
+mysql> DELIMITER $$
+mysql>
+mysql> CREATE PROCEDURE GetCustomerLevel(
+    ->     in  p_customerNumber int(11),
+    ->     out p_customerLevel varchar(15))
+    -> BEGIN
+    ->     DECLARE creditlim double;
+    ->
+    ->     SELECT creditlimit INTO creditlim
+    ->     FROM customers
+    ->     WHERE customerNumber = p_customerNumber;
+    ->
+    ->     IF creditlim > 50000 THEN
+    ->  SET p_customerLevel = "PLATINUM";
+    ->     ELSEIF (creditlim <= 50000 AND creditlim >=18000) THEN
+    ->         SET p_customerLevel = "GOLD";
+    ->     ELSEIF creditlim < 18000 THEN
+    ->         SET p_customerLevel = "SILVER";
+    ->     END IF;
+    ->
+    -> END$$
+Query OK, 0 rows affected (0.05 sec)
+ 
