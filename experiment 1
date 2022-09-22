@@ -1,0 +1,93 @@
+CREATE DATABASE SSE;
+
+USE SSE;
+
+# 1. create table "student"
+CREATE TABLE STUDENT(
+	REGISTER_NO INT,
+    NAME CHAR(20),
+    GENDER CHAR(1),
+    DOB INT(10),
+    MOBILE_NO INT(10),
+    CITY CHAR(10)
+    );
+OUTPUT:
+mysql> desc student;
++-------------+----------+------+-----+---------+-------+
+| Field       | Type     | Null | Key | Default | Extra |
++-------------+----------+------+-----+---------+-------+
+| REGISTER_NO | int(11)  | YES  |     | NULL    |       |
+| NAME        | char(20) | YES  |     | NULL    |       |
+| GENDER      | char(1)  | YES  |     | NULL    |       |
+| DOB         | int(10)  | YES  |     | NULL    |       |
+| MOBILE_NO   | int(10)  | YES  |     | NULL    |       |
+| CITY        | char(10) | YES  |     | NULL    |       |
++-------------+----------+------+-----+---------+-------+
+6 rows in set (0.03 sec)
+
+# 2. create table "faculty"
+CREATE TABLE FACULTY(
+	FACULTY_NO CHAR(4),
+    FACULTY_NAME CHAR(15),
+    GENDER CHAR(1),
+    DOB DATE,
+    DOJ DATE,
+    MOBILE_NO INT(10)
+	);
+OUTPUT:
+mysql> desc FACULTY
+    -> ;
++--------------+----------+------+-----+---------+-------+
+| Field        | Type     | Null | Key | Default | Extra |
++--------------+----------+------+-----+---------+-------+
+| FACULTY_NO   | char(4)  | YES  |     | NULL    |       |
+| FACULTY_NAME | char(15) | YES  |     | NULL    |       |
+| GENDER       | char(1)  | YES  |     | NULL    |       |
+| DOB          | date     | YES  |     | NULL    |       |
+| DOJ          | date     | YES  |     | NULL    |       |
+| MOBILE_NO    | int(10)  | YES  |     | NULL    |       |
++--------------+----------+------+-----+---------+-------+
+6 rows in set (0.02 sec)
+    
+# 3.    
+CREATE TABLE DEPARTMENT(
+	DEPT_NO CHAR(4),
+    DEPT_NAME CHAR(15),
+    DEPT_HEAD CHAR(4)
+    );
+OUTPUT:
+mysql> desc DEPARTMENT;
++-----------+----------+------+-----+---------+-------+
+| Field     | Type     | Null | Key | Default | Extra |
++-----------+----------+------+-----+---------+-------+
+| DEPT_NO   | char(4)  | YES  |     | NULL    |       |
+| DEPT_NAME | char(15) | YES  |     | NULL    |       |
+| DEPT_HEAD | char(4)  | YES  |     | NULL    |       |
++-----------+----------+------+-----+---------+-------+
+3 rows in set (0.02 sec)
+    
+# 4.
+CREATE TABLE COURSE(
+	COURSE_NO CHAR(3),
+    COURSE_DESC CHAR(14),
+    COURSE_TYPE CHAR(1),
+    SEM_NO CHAR(1),
+    HALL_NO CHAR(4),
+    FACULTY_NO CHAR(4)
+    );
+    
+OUTPUT:
+mysql> desc COURSE
+    -> ;
+OUTPUT:
++-------------+----------+------+-----+---------+-------+
+| Field       | Type     | Null | Key | Default | Extra |
++-------------+----------+------+-----+---------+-------+
+| COURSE_NO   | char(3)  | YES  |     | NULL    |       |
+| COURSE_DESC | char(14) | YES  |     | NULL    |       |
+| COURSE_TYPE | char(1)  | YES  |     | NULL    |       |
+| SEM_NO      | char(1)  | YES  |     | NULL    |       |
+| HALL_NO     | char(4)  | YES  |     | NULL    |       |
+| FACULTY_NO  | char(4)  | YES  |     | NULL    |       |
++-------------+----------+------+-----+---------+-------+
+6 rows in set (0.01 sec)
