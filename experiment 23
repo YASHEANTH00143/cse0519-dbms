@@ -1,0 +1,35 @@
+mysql> create table hospital (patientid int(10),patientname char(10),mobileno int(10),gender char(1),age int(3),doctorid int(10),doctorname char(10),billamount int(10));
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> desc hospital;
++-------------+----------+------+-----+---------+-------+
+| Field       | Type     | Null | Key | Default | Extra |
++-------------+----------+------+-----+---------+-------+
+| patientid   | int(10)  | YES  |     | NULL    |       |
+| patientname | char(10) | YES  |     | NULL    |       |
+| mobileno    | int(10)  | YES  |     | NULL    |       |
+| gender      | char(1)  | YES  |     | NULL    |       |
+| age         | int(3)   | YES  |     | NULL    |       |
+| doctorid    | int(10)  | YES  |     | NULL    |       |
+| doctorname  | char(10) | YES  |     | NULL    |       |
+| billamount  | int(10)  | YES  |     | NULL    |       |
++-------------+----------+------+-----+---------+-------+
+8 rows in set (0.04 sec)
+
+mysql> insert into hospital values(101,'Ram',8564479,'M',32,8001,'Vasu',50000);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into hospital values(102,'Ragu',85856479,'M',39,8003,'Sai',50200);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into hospital values(103,'sidu',858546879,'M',96,8004,'Charan',5000000);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> select* from hospital;
++-----------+-------------+-----------+--------+------+----------+------------+------------+
+| patientid | patientname | mobileno  | gender | age  | doctorid | doctorname | billamount |
++-----------+-------------+-----------+--------+------+----------+------------+------------+
+|       101 | Ram         |   8564479 | M      |   32 |     8001 | Vasu       |      50000 |
+|       102 | Ragu        |  85856479 | M      |   39 |     8003 | Sai        |      50200 |
+|       103 | sidu        | 858546879 | M      |   96 |     8004 | Charan     |    5000000 |
++-----------+-------------+-----------+--------+------+----------+------------+------------+
