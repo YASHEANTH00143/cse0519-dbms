@@ -1,6 +1,6 @@
 # CSA0519-Data-Base-Management-System
 ## Day1 Experiment Queries
-[DDL Commands](https://github.com/Apitha2404/CSA0519-Data-Base-Management-System)
+[DDL Commands](https://github.com/yasheanth00143/CSA0519-Data-Base-Management-System)
 <img width="422" alt="image" src="https://user-images.githubusercontent.com/112794125/191252519-b036fcc5-e57f-4d2b-9a0b-1350d90d84bd.png">
 <img width="420" alt="image" src="https://user-images.githubusercontent.com/112794125/191252650-29a185cc-ac5d-42e1-8b85-5f1cecfbb902.png">
 <img width="405" alt="image" src="https://user-images.githubusercontent.com/112794125/191252776-10f3fea0-7f98-4486-ba2a-faac4edd0eed.png">
